@@ -2,6 +2,8 @@
 data/datasets/
 wandb/
 exps/
+lm_benchmark/data/pg19/*
+lm_benchmark/data/proof-pile/*
 
 # Byte-compiled / optimized / DLL files
 __pycache__/
