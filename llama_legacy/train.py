@@ -156,7 +156,7 @@ def train():
     rank = int(os.environ.get('RANK', -1))
     if rank > 0:
         barrier()
-    dataset = load_dataset("togethercomputer/RedPajama-Data-1T-Sample", cache_dir=training_args.cache_dir)
+    dataset = load_dataset("togethercomputer/RedPajama-Data-1T-Sample", cache_dir=training_args.cache_dir, trust_remote_code=True)
 
     dataset = dataset.map(partial(tokenize_fn,tokenizer),batched=True, num_proc=32, remove_columns=["text", "meta"])
 
